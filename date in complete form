@@ -1,0 +1,52 @@
+//date in complete form
+#include<stdio.h>
+int main()
+{
+    int dd , mm , y;
+    printf("Enter the date (format: dd:mm:yyyy):- ");
+    scanf("%d%d%d" , &dd , &mm , &y);
+    switch (mm)
+    {
+    case 1:
+        printf("January %d , %d" , dd , y);
+        break;
+    case 2:
+        printf("February %d , %d" , dd , y);
+        break;
+    case 3:
+        printf("March %d , %d" , dd , y);
+        break;
+    case 4:
+        printf("April %d , %d" , dd , y);
+        break;
+    case 5:
+        printf("May %d , %d" , dd , y);
+        break;
+    case 6:
+        printf("June %d , %d" , dd , y);
+        break;
+    case 7:
+        printf("July %d , %d" , dd , y);
+        break;
+    case 8:
+        printf("August %d , %d" , dd , y);
+        break;
+    case 9:
+        printf("September %d , %d" , dd , y);
+        break;
+    case 10:
+        printf("October %d , %d" , dd , y);
+        break;
+    case 11:
+        printf("November %d , %d" , dd , y);
+        break;
+    case 12:
+        printf("December %d , %d" , dd , y);
+        break;
+    
+    default:
+    printf("Error!!!");
+        
+    }
+    return 0;
+}
