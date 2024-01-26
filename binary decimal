@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int i=0 ,binary,decimal=0,rem ;
+    printf("Enter the binary number:- \n");
+    scanf("%d" , &binary);
+//binary to decimal
+    while(binary!=0)
+    {
+        rem = binary%10;
+        decimal += rem*pow(2,i);
+        binary /= 10;
+        i++;
+    }
+    printf("The decimal number is %d\n" , decimal);
+    //decimal to octal
+    int temp , octal=0 , rem2 , j=1;
+    temp = decimal;
+    while(temp!=0)
+    {
+        rem2 = temp%8;
+        octal = octal+rem2*j;
+        temp = temp/8;
+        j=j*10;
+    }
+    printf("The octal number is %d\n" , octal);
+    //decimal to hexadecimal
+    int temp2 , i3 , j2=0,rem3=0;
+    char hexa[100];
+    temp2 = decimal;
+    while (temp2 != 0)
+    {
+        rem3 = temp2%16;
+        if(rem3<10)
+        {
+            hexa[j2] = 48+rem3;
+            j2++;
+        }
+        else
+        {
+            hexa[j2] = 55+rem3;
+            j2++;
+        }
+        temp2 = temp2/16;
+    }
+     printf("The hexadecimal number is ");
+     for(int i3=j2-1 ; i3>=0 ; i3--)
+     printf("%c" , hexa[i3]);
+    return 0;
+}
