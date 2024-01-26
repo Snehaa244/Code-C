@@ -1,0 +1,11 @@
+//percentage calculator
+#include<stdio.h>
+int main()
+{
+    int num1 , num2;
+    printf("Ënter two numbers: ");
+    scanf("%d%d" , &num1 , &num2);
+    float perc = (num1*100)/num2;
+    printf("%d is %0.2f %% of %d" , num1 , perc , num2);
+    return 0;
+}
