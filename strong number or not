@@ -1,0 +1,28 @@
+//strong number or not
+//strong number -----> 145 ---> 1!+4!+5!=1+24+120=145
+#include<stdio.h>
+//factorial using recursive function
+int fact(int n)
+{
+    if(n==0||n==1)
+    return 1;
+    else
+    return n*fact(n-1);
+}
+int main()
+{
+    int num  , unitDigit=0 , factorial=0 , f=0;
+    printf("Enter the number :- ");
+    scanf("%d" , &num);
+    for(int i=num ; i>0 ; i/=10)
+    {
+        unitDigit = i%10;//will get last digit
+        
+         f += fact(unitDigit);//factorial of each ending digit after loop is added
+    }
+    if(f==num)
+    printf("Number is strong.");
+    else
+    printf("Number is not strong");
+    return 0;
+}
