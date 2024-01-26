@@ -1,0 +1,16 @@
+//print accepted number and its reverse number
+#include<stdio.h>
+int main()
+{
+    int n , rem =0 , rev = 0;
+    printf("Enter a number:- ");
+    scanf("%d" , &n);
+    printf("The entered number is %d\n" , n);
+    for(int i=n ; i>0 ; i /= 10)//updation will remove the unit place one by one
+    {
+        rem = i%10;//will give remainder,ie, last digit of number
+        rev = rev*10+rem;
+    }
+    printf("The number after reversal will be:- %d" , rev);
+    return 0;
+}
