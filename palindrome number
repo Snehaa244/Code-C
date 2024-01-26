@@ -1,0 +1,23 @@
+//palindrome number
+//if reversed num == original num , then it will be palindrome
+#include<stdio.h>
+int main()
+{
+    int n , rem = 0 , rev =0; 
+    printf("Enter the number:- ");
+    scanf("%d" , &n);
+    for(int i=n ; i>0 ; i /= 10)
+    {
+        rem =i%10;
+        rev = rev*10+rem;
+    }
+    if(rev==n)
+    {
+        printf("%d is a palindrome." , n);
+    }
+    else
+    {
+        printf("%d is not a palindrome." , n);
+    }
+    return 0;
+}
