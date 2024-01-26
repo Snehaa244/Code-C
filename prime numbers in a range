@@ -1,0 +1,29 @@
+//prime numbers in a range
+#include<stdio.h>
+int checkPrime(int num)
+{
+    if(num<2)//0 and 1 are not prime
+    return 0;
+    else
+    {
+        for(int i=2 ; i<=num/2 ; i++)//entered number is checked
+        {
+            if(num%i==0)//if it is divisible by any i , it will not be prime
+            return 0;
+        }
+    }
+return 1;//the number will be prime
+}
+int main()
+{
+    int ll , ul;
+    printf("Enter the lower limit and upper limit in sequence:- \n");
+    scanf("%d%d" , &ll,&ul);
+    for (int i=ll ; i<=ul ; i++)
+    {
+        if(checkPrime(i))//if the func return 1(true) , no. is displayed else not
+        printf(" %d " , i);
+    }
+    
+    return 0;
+}
