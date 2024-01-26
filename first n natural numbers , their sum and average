@@ -1,0 +1,21 @@
+//first n natural numbers , their sum and average
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter the number of natural numbers:- ");
+    scanf("%d" , &n);
+    for (int i = 1 ; i <= n; i++)
+    {
+        if(i<n)
+        printf("%d\t" , i);
+        else
+        printf("%d\n" , i);//to change the line when last number is print
+    }
+    int sum =(n*(n+1)) /2;
+    printf("Sum of %d natural numbers is %d\n" , n , sum);
+    float av = sum/n;
+    printf("Average of %d natural numbers is %0.2f\n" , n , av);
+    
+    return 0;
+}
