@@ -1,0 +1,10 @@
+//digit or not(conditional operator)
+#include<stdio.h>
+int main()
+{
+    char c;
+    printf("enter a character: ");
+    scanf("%c" ,&c);
+    (c>='0'&&c<='9')?printf("Yes it is a digit."):printf("No it is not a digit.");
+    return 0;
+}
