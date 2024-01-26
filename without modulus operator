@@ -1,0 +1,18 @@
+//getting remainder without using modulus operator
+//dividend = divisor*quotient+remainder
+#include<stdio.h>
+int myMod(int n , int d)
+{
+    int q = n/d;
+    int r = n-(d*q);
+    printf("The remainder of (%d,%d) is :- %d " , n , d , r );
+    return 0;
+}
+int main()
+{
+    int n,d;
+    printf("Enter number and divisor(n,d):- \n");
+    scanf("%d%d" ,&n,&d );
+    myMod(n,d);
+    return 0;
+}
