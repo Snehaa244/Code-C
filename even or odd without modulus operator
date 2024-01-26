@@ -1,0 +1,15 @@
+//even or odd without modulus operator
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter the number:- ");
+    scanf("%d" , &n);
+    //even number has 0 at unit place in binary
+    //odd number has 1 at unit place in binary
+    if((n&1)==0)
+    printf("The number is even");
+    else
+    printf("The number is odd");
+    return 0;
+}
