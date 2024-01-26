@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+    int tf;
+    printf("Enter the time in 24 hrs format:- ");
+    scanf("%d" , &tf);
+    if (tf >= 0 && tf <= 12)
+    {
+        printf("%d A.M." , tf);
+    }
+    else{
+        printf("%d P.M." , tf-12);
+    }
+    return 0;
+}
