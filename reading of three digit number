@@ -1,0 +1,16 @@
+//to read a three digit number
+#include<stdio.h>
+int main()
+{
+    int num;
+    printf("Enter a three digit number: ");
+    scanf("%d" , &num);
+    int y = num/100;
+    printf("%d hundreds " , y);
+    int z = num/10;
+    int d= z%10;
+    printf("%d tens " , d);
+    int x = num%10;
+    printf("%d units " , x);
+    return 0;
+}
