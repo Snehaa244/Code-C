@@ -1,0 +1,35 @@
+//fibonacci series
+#include<stdio.h>
+int main()
+{
+    int i,n;
+    //initialize the first and second term.
+    int t1=0 , t2=1;
+    //initialize the next terms , i.e. , the third term and so on.
+    int nextTerm = t1+t2;
+    //input of number of terms by the user.
+    printf("Enter the number of terms = ");
+    scanf("%d" , &n);
+    //print first two terms of the series.
+    if(n==1)
+    {
+        printf("0");
+    }
+    else if(n==2)
+    {
+        printf("0 , 1");
+    }
+    else
+    {printf("Fibonacci series: %d,%d," , t1,t2);
+    for(i=3;i<n;i++){
+        printf("%d,", nextTerm);
+        t1=t2;
+        t2=nextTerm;
+        nextTerm = t1+t2;
+    }
+    printf("%d" , nextTerm);//to remove last comma
+    }
+    return 0;
+
+
+}
