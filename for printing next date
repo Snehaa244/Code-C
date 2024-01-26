@@ -1,0 +1,90 @@
+//for printing next date
+#include<stdio.h>
+int sindig(int dd , int mm , int y){//function for single digit dates
+    dd++;
+    if(mm>=1&&mm<=9)//months from 1 to 9 have 0 in months
+    printf("Next date will be :- 0%d:0%d:%d" , dd ,mm,y);
+    else//months from 10 to 12 will not have 0 in months
+    printf("Next date will be :- 0%d:%d:%d" , dd ,mm,y);
+}
+    int doubdig(int dd,int mm,int y){//function for double digit dates
+         dd++;
+         if(mm>=1&&mm<=9)//months from 1 to 9 have 0 in months
+         printf("Next date will be :- %d:0%d:%d" , dd ,mm,y);
+         else//months from 10 to 12 will not have 0 in months
+         printf("Next date will be :- %d:%d:%d" , dd ,mm,y);
+    }
+int main()
+{
+    int dd , mm , y;
+    printf("Enter the date (format: dd:mm:yyyy):-\n");
+    scanf("%d%d%d" , &dd , &mm , &y);
+    switch (mm)
+        {
+            case 2:
+            {
+        if(dd>=1&&dd<=8)//increament of date in this range will give single digit date
+            sindig(dd,mm,y);
+        else if (dd>=9&&dd<=27)//increament of date in this range will give double digit date
+            doubdig(dd,mm,y);
+        else if (dd==28)
+        {
+            //will check for leap year
+            if((y%400==0)&&(y%100==0))
+            dd++;
+            else if ((y%4==0) && (y%100!=0))
+            dd++;
+            else
+            {
+                dd = 01;
+                mm = 03;
+            }
+            if(dd>=1&&dd<9)//after updation of date
+            printf("Next date will be :- 0%d:0%d:%d" , dd ,mm,y);  
+           else
+            printf("Next date will be :- %d:0%d:%d" , dd ,mm,y);  
+        }
+            }
+        break;
+        case 1: case 3 : case 5 : case 7: case 8 : case 10: case 12://month having date upto 31  
+        {
+            if(dd>=1&&dd<=8)//increament of date in this range will give single digit date
+                sindig(dd,mm,y);
+            else if (dd>=9&&dd<=30)//increament of date in this range will give double digit date
+                 doubdig(dd,mm,y);
+                 //sindig and doubdig includes double digit month so there is no issue upto these dates
+            else if (dd==31)
+            {
+                if(mm>=1 &&mm<=8){//for these months increament of month will be single digit
+                    mm++;
+                printf("Next date will be:- 01:0%d:%d" , mm , y);
+                }
+                else if(mm>=9&&mm<=11){//for these moths increament of month will be double digit so no zero used in month
+                    mm++;
+                    printf("Next date will be:- 01:%d:%d" , mm , y);
+                }
+                else{//year increament for 31st dec
+                    y++;
+                    printf("Next date will be:- 01:01:%d" ,  y);
+                }
+            }
+        }
+        break;
+        case 4 : case 6 : case 9 :  case 11 : //months having dates upto 30 and are single digit
+        {
+            if(dd>=1&&dd<9)//for these dates increased date will be single digit 
+                sindig(dd,mm,y);
+            else if (dd>=9 && dd<=29)//for these dates increased date will be double digit 
+                 doubdig(dd,mm,y);
+            else//for date 30
+            {
+                ++mm;// pre increament used , first increase month 
+                if(mm==10||mm==12)//if increased month is 10 or 12 date will be 01 and month will be 10 or 12
+                printf("Next date will be:- 01:%d:%d" , mm , y );
+                else//increased month is single digit
+                printf("Next date will be:- 01:0%d:%d" , mm , y );
+            }  
+        }
+        break;
+}
+}
