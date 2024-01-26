@@ -1,0 +1,14 @@
+//sum of first 100 odd numbers and even numbers
+#include<stdio.h>
+int main()
+{
+    int n , sumOdd , sumEven;
+    printf("Enter the number of natural numbers:- ");
+    scanf("%d" , &n);
+    sumEven = n*(n+1);
+    sumOdd = n*n;
+    //for this problem the value of n is 100
+    printf("The sum of first 100 odd numbers is %d\n" , sumOdd);
+    printf("The sum of first 100 even numbers is %d" , sumEven);
+    return 0;
+}
