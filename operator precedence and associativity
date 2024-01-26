@@ -1,0 +1,21 @@
+//operator precedence and associativity
+#include<stdio.h>
+int main()
+{
+    int x;
+    // part a
+    x = 7+3*6/2-1;
+    printf("%d\n" , x);
+    // * and / has same precedence and above + and - . Both have associativity from left to right.
+    //part b
+    x = 2%2+2*2-2/2;
+    printf("%d\n" , x);
+    //(* / %) have same precedence and above + and - . Both have associativity from left to right.
+    //part b
+    x = ( 3 * 9 * ( 3 + ( 9 * 3 / (3) ) ) );
+    printf("%d\n" , x);
+    //in this all the brackts will be solved first starting from the inside most part.
+
+
+    return 0;
+}
