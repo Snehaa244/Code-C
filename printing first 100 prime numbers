@@ -18,3 +18,12 @@ int main()
     }
     if(count == 0)//prime
     {
+   printf(" %d ", num);
+    prime_counter++;
+    }  
+
+
+  }
+  return 0;
+}
+
